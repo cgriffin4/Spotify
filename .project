@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
+<<<<<<< HEAD
 	<name>Spotify</name>
+=======
+	<name>spotify</name>
+>>>>>>> 7e67bbfe50b08753293388e9ec632f08fee5e0fb
 	<comment></comment>
 	<projects>
 	</projects>

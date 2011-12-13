@@ -15,8 +15,11 @@
      "en"
  ],
  "RequiredInterface":"1",
+<<<<<<< HEAD
  "RequiredPermissions":[
  	"http://cgriffin4.no.de/"
  ],
+=======
+>>>>>>> 7e67bbfe50b08753293388e9ec632f08fee5e0fb
  "VendorIdentifier":"com.HelloWorld"
 }
