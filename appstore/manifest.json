@@ -1,0 +1,22 @@
+{
+ "BundleType": "Application",
+ "BundleIdentifier": "HelloWorld!12",
+ "BundleVersion": "0.01",
+ "AppIcon": {
+     "18x18": "18x18.jpg",
+     "64x64": "64x64.jpg",
+     "128x128": "128x128.png"
+  },
+ "AppName": {
+     "en": "appstore"
+  },
+  "AppDescription" : "Hello World Application",
+ "SupportedLanguages": [
+     "en"
+ ],
+ "RequiredInterface":"1",
+ "RequiredPermissions":[
+ 	"http://cgriffin4.no.de/"
+ ],
+ "VendorIdentifier":"com.HelloWorld"
+}

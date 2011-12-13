@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>HelloWorld</title>
+		<link rel="stylesheet" href="sp://import/css/eve.css">
+	</head>
+	<body>
+		<header>HelloWorld</header>
+		<div id="main">
+			<div id="CurrentTrack"></div>
+		</div>
+		
+		<script>
+			function init() {
+
+			    updatePageWithTrackDetails();
+			
+			    sp.trackPlayer.addEventListener("playerStateChanged", function (event) {
+			
+			        // Only update the page if the track changed
+			        if (event.data.curtrack == true) {
+			            updatePageWithTrackDetails();
+			        }
+			    });
+			}
+			
+			function updatePageWithTrackDetails() {
+			
+			    var header = document.getElementById("CurrentTrack");
+			
+			    // This will be null if nothing is playing.
+			    var playerTrackInfo = sp.trackPlayer.getNowPlayingTrack();
+			
+			    if (playerTrackInfo == null) {
+			        header.innerText = "Nothing playing!";
+			    } else {
+			        var track = playerTrackInfo.track;
+			        var seconds = (playerTrackInfo.position/1000)%60;
+			        var minutes = (playerTrackInfo.position/(1000*60))%60;
+					
+			        header.innerText = track.name + " on the album " + track.album.name + " by " + track.album.artist.name + ". Minutes: " + Math.floor(minutes) + ". Seconds: " + Math.floor(seconds);
+			        console.log(sp.trackPlayer);
+			        console.log(playerTrackInfo);
+			    }
+			    
+			    console.log("there");
+			    talkToNode();
+			    console.log("here");
+			}
+			
+			function talkToNode() {
+
+			    var req = new XMLHttpRequest();
+			    req.open("GET", "http://cgriffin4.no.de/", true);
+			
+			    req.onreadystatechange = function() {
+			
+			        if (req.readyState == 4) {
+			            if (req.status == 200) {
+			                console.log("Connection Made");
+			            }
+			        }
+			    };
+			
+			    req.send();
+			}
+			
+			sp = getSpotifyApi(1);
+			init();
+		</script>
+	</body>
+</html>
